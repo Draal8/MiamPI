@@ -1,0 +1,201 @@
+[gd_scene load_steps=19 format=3 uid="uid://dleh8sm0j70ru"]
+
+[ext_resource type="PackedScene" uid="uid://d2myw6m0imtvk" path="res://Scenes/OperationMpi.tscn" id="1_ycdpn"]
+[ext_resource type="Texture2D" uid="uid://cys1b863p45aa" path="res://fast-forward.png" id="2_n6c85"]
+[ext_resource type="Texture2D" uid="uid://drokbd43btot1" path="res://Assets/beef-steak.png" id="3_q20ow"]
+[ext_resource type="Texture2D" uid="uid://yshhxafp6y4t" path="res://Assets/lettuce.png" id="4_qu2c5"]
+[ext_resource type="Texture2D" uid="uid://dgcybspdmi5kn" path="res://Assets/tomate.png" id="5_mwmrh"]
+[ext_resource type="Texture2D" uid="uid://n8xi55642btw" path="res://Assets/cheese.png" id="6_sbval"]
+[ext_resource type="Texture2D" uid="uid://cjh4ramdb0cne" path="res://Assets/bread.png" id="7_4mi8c"]
+[ext_resource type="Texture2D" uid="uid://c1micros4yh7p" path="res://Assets/cheeseburger.png" id="8_67j2c"]
+[ext_resource type="Script" path="res://Scripts/client.gd" id="8_yybh3"]
+[ext_resource type="Texture2D" uid="uid://cab2jbtt747af" path="res://Assets/sandwich.png" id="9_gp357"]
+[ext_resource type="Texture2D" uid="uid://csio6m375t2r6" path="res://Assets/salad.png" id="10_dk47f"]
+[ext_resource type="Texture2D" uid="uid://boo3egctn1por" path="res://Assets/steak.png" id="11_tpnif"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pc5ey"]
+size = Vector2(50, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xindp"]
+size = Vector2(1591.79, 54.7292)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3oiry"]
+size = Vector2(1148, 191)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpeh6"]
+size = Vector2(609.071, 123.292)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hph2n"]
+size = Vector2(17.22, 29.9175)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmqrl"]
+size = Vector2(36.807, 4.92342)
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(0.999027, 1)
+
+[node name="Planning_zone" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Planning_zone"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Planning_zone/Area2D"]
+visible = false
+build_mode = 1
+polygon = PackedVector2Array(0, 0, 0, 1080, 1921, 1081, 1921, -1)
+
+[node name="Line_1" type="Line2D" parent="Planning_zone"]
+position = Vector2(500, 200)
+points = PackedVector2Array(0, 0, 1425, 0)
+
+[node name="Line_2" type="Line2D" parent="Planning_zone"]
+position = Vector2(500, 400)
+points = PackedVector2Array(0, 0, 1425, 0)
+
+[node name="Line_3" type="Line2D" parent="Planning_zone"]
+position = Vector2(500, 600)
+points = PackedVector2Array(0, 0, 1425, 0)
+
+[node name="Line_4" type="Line2D" parent="Planning_zone"]
+position = Vector2(500, 800)
+points = PackedVector2Array(0, 0, 1425, 0)
+
+[node name="Area2D2" type="Area2D" parent="Planning_zone"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planning_zone/Area2D2"]
+position = Vector2(1675, 540)
+shape = SubResource("RectangleShape2D_pc5ey")
+one_way_collision = true
+one_way_collision_margin = 0.0
+debug_color = Color(0, 0.556863, 0.898039, 1)
+
+[node name="UI" type="Node2D" parent="."]
+scale = Vector2(1, 0.985475)
+
+[node name="mpi_operations_zone2" type="Node2D" parent="UI"]
+position = Vector2(20, 20)
+scale = Vector2(1, 1)
+
+[node name="OperationMpi" parent="UI/mpi_operations_zone2" instance=ExtResource("1_ycdpn")]
+position = Vector2(69, 56)
+
+[node name="start_button" type="TextureButton" parent="UI"]
+visible = false
+offset_left = 1700.0
+offset_top = 951.0
+offset_right = 1919.0
+offset_bottom = 1079.0
+
+[node name="Area2D3" type="Area2D" parent="UI/start_button"]
+position = Vector2(-1700, -951)
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/start_button/Area2D3"]
+position = Vector2(1808, 1016)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_n6c85")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI"]
+layout_direction = 2
+offset_top = 1005.0
+offset_right = 222.0
+offset_bottom = 1078.0
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[right][font_size=50]0 $[right]"
+text_direction = 1
+
+[node name="ingredient1" type="Sprite2D" parent="UI"]
+position = Vector2(396, 86)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_q20ow")
+
+[node name="ingredient2" type="Sprite2D" parent="UI"]
+position = Vector2(398, 294)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_qu2c5")
+
+[node name="ingredient3" type="Sprite2D" parent="UI"]
+position = Vector2(388, 491)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_mwmrh")
+
+[node name="ingredient4" type="Sprite2D" parent="UI"]
+position = Vector2(381, 703)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_sbval")
+
+[node name="ingredient5" type="Sprite2D" parent="UI"]
+position = Vector2(380, 891)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_4mi8c")
+
+[node name="Clients" type="Node2D" parent="."]
+
+[node name="Client1" type="Node2D" parent="Clients"]
+script = ExtResource("8_yybh3")
+
+[node name="zone" type="Area2D" parent="Clients/Client1"]
+scale = Vector2(-123.834, 3.563)
+
+[node name="client1_hitbox" type="CollisionShape2D" parent="Clients/Client1/zone"]
+position = Vector2(-8.67293, 27.6452)
+scale = Vector2(0.00582397, 1)
+shape = SubResource("RectangleShape2D_xindp")
+
+[node name="Recette1_1" type="Sprite2D" parent="Clients/Client1"]
+position = Vector2(1797, 97)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_67j2c")
+
+[node name="Client2" type="Node2D" parent="Clients"]
+
+[node name="zone" type="Area2D" parent="Clients/Client2"]
+
+[node name="hitbox" type="CollisionShape2D" parent="Clients/Client2/zone"]
+position = Vector2(1074, 299.5)
+shape = SubResource("RectangleShape2D_3oiry")
+
+[node name="Recette2_1" type="Sprite2D" parent="Clients/Client2"]
+position = Vector2(1796, 293)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_gp357")
+
+[node name="Client3" type="Node2D" parent="Clients"]
+
+[node name="zone" type="Area2D" parent="Clients/Client3"]
+
+[node name="hitbox" type="CollisionShape2D" parent="Clients/Client3/zone"]
+position = Vector2(1074, 500)
+scale = Vector2(1.88812, 1.54106)
+shape = SubResource("RectangleShape2D_bpeh6")
+
+[node name="Recette3_1" type="Sprite2D" parent="Clients/Client3"]
+position = Vector2(1797, 491)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_dk47f")
+
+[node name="Client4" type="Node2D" parent="Clients"]
+
+[node name="zone" type="Area2D" parent="Clients/Client4"]
+
+[node name="hitbox" type="CollisionShape2D" parent="Clients/Client4/zone"]
+position = Vector2(1074, 699.5)
+rotation = -3.14159
+scale = Vector2(66.899, -6.38422)
+shape = SubResource("RectangleShape2D_hph2n")
+
+[node name="Recette4_1" type="Sprite2D" parent="Clients/Client4"]
+position = Vector2(1797, 694)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_tpnif")
+
+[node name="Client5" type="Node2D" parent="Clients"]
+
+[node name="zone" type="Area2D" parent="Clients/Client5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clients/Client5/zone"]
+position = Vector2(1075.5, 897)
+scale = Vector2(31.3061, 37.6533)
+shape = SubResource("RectangleShape2D_kmqrl")
+
+[connection signal="area_entered" from="Clients/Client1/zone" to="Clients/Client1" method="_on_zone_area_entered"]
+[connection signal="area_exited" from="Clients/Client1/zone" to="Clients/Client1" method="_on_zone_area_exited"]

@@ -1,6 +1,7 @@
 class_name client
 extends Node
 
+var client_name
 var recettes = []
 var ingredients: Dictionary = { "cabbage":0, "steak":0, "cheese":0, "tomato":0, "bread":0 }
 
@@ -29,8 +30,17 @@ func left_overs() -> int:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func _on_zone_area_entered(_area: Area2D) -> void:
+	print("C")
+	pass # Replace with function body.
+
+func _on_zone_area_exited(_area: Area2D) -> void:
+	print("areaB")
+	pass # Replace with function body.

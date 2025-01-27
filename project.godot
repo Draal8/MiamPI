@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Miam-PI"
-run/main_scene="res://scene_1.tscn"
+run/main_scene="res://Scenes/scene_1.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,3 +20,7 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/borderless=true
+
+[global_group]
+
+dragable=""
